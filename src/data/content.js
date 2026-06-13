@@ -13,11 +13,14 @@ import aerial from '../assets/DJI_0681.jpg'
 import korite from '../assets/Korite.jpg'
 import maghribImg from '../assets/MAGHRIB.jpg'
 import heroVideo from '../assets/hero.mp4'
+import heroVideo3 from '../assets/hero3.mp4'
+import dji0419 from '../assets/DJI_0419.jpg'
 
 export const VIDEO = heroVideo
+export const VIDEO3 = heroVideo3
 
 export const images = {
-  fayfaat, khalife, sirat, aerial, korite, maghribImg,
+  fayfaat, khalife, sirat, aerial, korite, maghribImg, dji0419,
   expoImg, expo2Img, fajrImg, ishaImg, imamsImg, journeesImg, aab,
 }
 
