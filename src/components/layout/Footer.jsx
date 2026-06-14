@@ -1,10 +1,20 @@
 import logo from '../../assets/Logo.png'
-import { FOOTER_NAV, SOCIALS } from '../../data/content'
+import { FaYoutube, FaFacebookF, FaInstagram, FaXTwitter, FaTiktok, FaSnapchat } from 'react-icons/fa6'
+import { FOOTER_NAV } from '../../data/content'
+
+// Réseaux sociaux : icône monochrome + lien (à remplacer par les vraies URL).
+const SOCIAL_LINKS = [
+  { Icon: FaYoutube, label: 'YouTube', url: '#' },
+  { Icon: FaFacebookF, label: 'Facebook', url: '#' },
+  { Icon: FaInstagram, label: 'Instagram', url: '#' },
+  { Icon: FaXTwitter, label: 'X (Twitter)', url: '#' },
+  { Icon: FaTiktok, label: 'TikTok', url: '#' },
+  { Icon: FaSnapchat, label: 'Snapchat', url: '#' },
+]
 
 export default function Footer() {
   return (
     <footer>
-      <div className="footer-red" />
       <div className="footer-main">
         <img src={logo} alt="Mosquée de la Divinité" style={{ height: 60 }} />
         <div>
@@ -13,11 +23,25 @@ export default function Footer() {
             Masdjidou Rabbani · Ouakam · Corniche-Ouest · Dakar · Sénégal
           </span>
         </div>
-        <div className="footer-socials">
-          {SOCIALS.map((s) => (
-            <a key={s} href="#contact" className="footer-soc-icon">{s}</a>
-          ))}
+
+        <div className="footer-follow">
+          <span className="footer-follow-label">Suivez-nous sur</span>
+          <div className="footer-socials">
+            {SOCIAL_LINKS.map(({ Icon, label, url }) => (
+              <a
+                key={label}
+                href={url}
+                aria-label={label}
+                target="_blank"
+                rel="noreferrer"
+                className="footer-soc-ico"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
         </div>
+
         <ul className="footer-nav">
           {FOOTER_NAV.map(([label, href]) => (
             <li key={href + label}><a href={href}>{label}</a></li>

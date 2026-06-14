@@ -1,49 +1,34 @@
-import { RENOVATION_INTRO, RENOVATION_PROJECTS, CONTRIBUTE } from '../../data/content'
+import { Link } from 'react-router-dom'
+
+// RÉNOVATION — « Préserver l'Héritage » : 2 phases avec barres de progression (réf)
+const PHASES = [
+  ['Phase I : Restauration', 'Traitement anticorrosion des armatures, étanchéité de la coupole et rénovation des façades extérieures.', 65],
+  ['Phase II : Complexe Culturel', 'Aménagement d’un musée Sangabi, d’une bibliothèque de recherche et d’un centre d’artisanat.', 15],
+]
 
 export default function Renovation() {
   return (
-    <section id="renovation" className="section bg-dk motif motif-star">
+    <section id="renovation" className="section bg-white">
       <div className="sw">
-        <div className="ey ey-gold">Appel à la communauté · Appel au monde</div>
-        <h2 className="h2 h2-lt">
-          Elle a été bâtie par des mains.<br /><em>Elle sera restaurée par des mains.</em>
-        </h2>
-        <span className="subhead-rule" />
-        <div className="prose">
-          {RENOVATION_INTRO.map((p, i) => (
-            <p className="bp bp-lt" key={i}>{p}</p>
-          ))}
+        <div className="sec-head-center">
+          <span className="eyebrow red">Projet de Conservation</span>
+          <h2 className="sec-title">Préserver <em>l’Héritage</em></h2>
         </div>
 
-        <div className="reno-projects">
-          {RENOVATION_PROJECTS.map(([title, body]) => (
-            <div className="reno-card" key={title}>
-              <h3 className="reno-title">{title}</h3>
-              <p className="reno-body">{body}</p>
+        <div className="reno2-grid">
+          {PHASES.map(([title, body, pct]) => (
+            <div className="reno2-card" key={title}>
+              <h4>{title}</h4>
+              <p>{body}</p>
+              <div className="reno2-bar"><i style={{ width: `${pct}%` }} /></div>
+              <p className="reno2-pct">{pct}% du budget collecté</p>
             </div>
           ))}
         </div>
 
-        <h3 className="reno-sub">Trois façons de contribuer</h3>
-        <div className="contribute-grid">
-          {CONTRIBUTE.map(([title, body, cta]) => (
-            <div className="contrib-card" key={title}>
-              <div className="contrib-title">{title}</div>
-              <p className="contrib-body">{body}</p>
-              <a href="#contact" className="btn-r contrib-cta">{cta}</a>
-            </div>
-          ))}
+        <div className="reno2-actions">
+          <Link to="/renovation" className="btn-teal">En savoir plus sur le projet</Link>
         </div>
-
-        <p className="reno-note">
-          Le plan architectural et le budget seront publiés ici dès leur finalisation. Chaque
-          franc collecté sera tracé et rendu public.
-        </p>
-
-        <blockquote className="reno-quote">
-          «&nbsp;Dieu qui m’a demandé de construire nous donnera les moyens nécessaires.&nbsp;»
-          <cite>— Sangabi, 1992</cite>
-        </blockquote>
       </div>
     </section>
   )

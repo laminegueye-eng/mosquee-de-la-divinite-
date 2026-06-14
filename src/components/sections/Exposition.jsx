@@ -1,4 +1,3 @@
-import { FiImage } from 'react-icons/fi'
 import { images, EXPO_THEMES } from '../../data/content'
 
 export default function Exposition() {
@@ -18,19 +17,19 @@ export default function Exposition() {
             </p>
           </div>
 
-          {/* Galerie mosaïque à droite (2 images + 2 emplacements à venir) */}
+          {/* Galerie mosaïque à droite */}
           <div className="expo-gallery">
             <div className="expo-col">
               <div className="expo-tile expo-tile-tall">
                 <img src={images.expoImg} alt="Exposition de la mosquée" loading="lazy" />
               </div>
-              <div className="expo-tile expo-tile-short expo-empty">
-                <FiImage /><span>Image à venir</span>
+              <div className="expo-tile expo-tile-short">
+                <img src={images.exposition3} alt="Photographie d’archive du Mouvement Naby Allah" loading="lazy" />
               </div>
             </div>
             <div className="expo-col expo-col-offset">
-              <div className="expo-tile expo-tile-short expo-empty">
-                <FiImage /><span>Image à venir</span>
+              <div className="expo-tile expo-tile-short">
+                <img src={images.exposition4} alt="Le site avant la construction de la mosquée" loading="lazy" />
               </div>
               <div className="expo-tile expo-tile-tall">
                 <img src={images.expo2Img} alt="Archives de la mosquée" loading="lazy" />

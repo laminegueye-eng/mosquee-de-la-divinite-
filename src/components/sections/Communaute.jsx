@@ -1,38 +1,32 @@
-import { COMMUNITY_INTRO, ACTIONS } from '../../data/content'
+import { FiCoffee, FiBookOpen, FiHeart, FiTrash2 } from 'react-icons/fi'
+
+// COMMUNAUTÉ — « Actions & Patrimoine » : 4 actions (réf)
+const ACTIONS = [
+  [FiCoffee, 'Ndogou', 'Repas de rupture offerts à des milliers de jeûneurs chaque soir de Ramadan.'],
+  [FiBookOpen, 'CEEMNA', 'Soutien scolaire et bourses pour les enfants issus des familles les plus modestes.'],
+  [FiHeart, 'Santé', 'Journées médicales et campagnes de don de sang régulières pour les hôpitaux.'],
+  [FiTrash2, 'UFMNA', 'L’union des femmes veille à la propreté méticuleuse du sanctuaire et de la plage.'],
+]
 
 export default function Communaute() {
   return (
-    <section id="communaute" className="section bg-white">
+    <section id="communaute" className="section bg-soft">
       <div className="sw">
-        <div className="ey ey-gold">Le Mouvement Naby Allah · En actes</div>
-        <h2 className="h2 h2-dk">La même communauté. <em>Le même élan.</em></h2>
-        <span className="subhead-rule" />
-        <div className="prose">
-          {COMMUNITY_INTRO.map((p, i) => (
-            <p className="bp bp-dk" key={i}>{p}</p>
-          ))}
+        <div className="comm2-head">
+          <div>
+            <h2 className="sec-title">Actions &amp; <em className="emerald-em">Patrimoine</em></h2>
+          </div>
+          <p>Au-delà du béton, une vie sociale intense anime la baie.</p>
         </div>
 
-        <div className="actions-grid">
-          {ACTIONS.map(([title, text, img]) => (
-            <div className="action-card" key={title}>
-              <div className="action-photo">
-                <img src={img} alt={title} className="ph" loading="lazy" />
-              </div>
-              <div className="action-body">
-                <div className="action-title">{title}</div>
-                <p className="action-text">{text}</p>
-              </div>
+        <div className="comm2-grid">
+          {ACTIONS.map(([Icon, title, body]) => (
+            <div className="comm2-card" key={title}>
+              <span className="ico"><Icon /></span>
+              <h4>{title}</h4>
+              <p>{body}</p>
             </div>
           ))}
-        </div>
-
-        <div className="transition-band transition-band-dk">
-          <p>
-            Ils ont construit la mosquée sans machines. Ils l’entretiennent sans relâche.
-            Et aujourd’hui, ils appellent le monde à les rejoindre pour la restaurer.
-          </p>
-          <a href="#renovation" className="btn-r">Soutenir la rénovation →</a>
         </div>
       </div>
     </section>

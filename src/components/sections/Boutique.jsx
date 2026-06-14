@@ -1,33 +1,36 @@
-import { BOUTIQUE } from '../../data/content'
+import { images } from '../../data/content'
+
+// BOUTIQUE — « Boutique Patrimoine » : 4 produits avec visuels
+const PRODUCTS = [
+  [images.puzzleImg, 'Puzzle Édition Limitée', '25 000 FCFA'],
+  [images.bagImg, 'Tote Bag Coton Bio', '8 000 FCFA'],
+  [images.hoodieImg, 'Hoodie Brodé', '20 000 FCFA'],
+  [images.blocNoteImg, 'Carnet de Notes', '12 000 FCFA'],
+]
 
 export default function Boutique() {
   return (
-    <section id="boutique" className="section bg-cream motif motif-dome">
+    <section id="boutique" className="section bg-soft">
       <div className="sw">
-        <div className="ey ey-gold">Boutique officielle · Mosquée de la Divinité</div>
-        <h2 className="h2 h2-dk">Porter le message. <em>Soutenir l’œuvre.</em></h2>
-        <span className="subhead-rule" />
-        <p className="bp bp-dk prose">
-          Chaque achat contribue directement à la rénovation de la mosquée et à la construction du
-          Complexe Mouhamed Seyni Gueye. L’achat est un don avec un objet en retour. Le don est un
-          achat sans objet.
-        </p>
-        <p className="boutique-ship">
-          Livraison disponible au Sénégal uniquement · Retrait possible à la boutique de la
-          mosquée, Corniche-Ouest, Ouakam, Dakar.
-        </p>
+        <div className="shop2-head">
+          <div>
+            <span className="eyebrow gold">Support &amp; Artisanat</span>
+            <h2 className="sec-title">Boutique <em className="red-em">Patrimoine</em></h2>
+          </div>
+        </div>
 
-        <div className="boutique-grid">
-          {BOUTIQUE.map(([title, body, meta]) => (
-            <article className="shop-card" key={title}>
-              <div className="shop-thumb"><span className="pc pc-night" /></div>
-              <div className="shop-info">
-                <h3 className="shop-title">{title}</h3>
-                <p className="shop-body">{body}</p>
-                <div className="shop-meta">{meta}</div>
-              </div>
+        <div className="shop2-grid">
+          {PRODUCTS.map(([img, name, price]) => (
+            <article className="shop2-card" key={name}>
+              <div className="thumb"><img src={img} alt={name} loading="lazy" /></div>
+              <h5 className="shop2-name">{name}</h5>
+              <p className="shop2-price">{price}</p>
             </article>
           ))}
+        </div>
+
+        <div className="shop2-cta-wrap">
+          <a href="#boutique" className="btn-teal">Voir tout</a>
         </div>
       </div>
     </section>

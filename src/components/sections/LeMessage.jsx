@@ -1,33 +1,29 @@
-import { MESSAGE_INTRO, PILLARS } from '../../data/content'
+// LE MESSAGE — « Un Message de Vérité » : Jub / Ragal Yàlla / Sellal (réf)
+const PILLARS = [
+  ['الهُدَى', 'emerald', 'Jub', '(Droiture)', 'La rectitude du comportement. Être droit envers Dieu et envers les hommes.', false],
+  ['تَقْوَى', 'red', 'Ragal Yàlla', '(Taqwa)', 'La conscience du Créateur. Nourrir en son cœur une crainte révérencielle.', true],
+  ['أَصْلَح', 'outline', 'Sellal', '(Réforme)', 'La pureté de l’âme. Un processus continu de transformation intérieure.', false],
+]
 
 export default function LeMessage() {
   return (
-    <section id="message" className="section bg-dk motif motif-flower">
+    <section id="message" className="section bg-cream">
       <div className="sw">
-        <div className="ey ey-gold">Ce que Sangabi a transmis au monde</div>
-        <h2 className="h2 h2-lt">Jub. Ragal Yàlla. <em>Sellal.</em></h2>
-        <span className="subhead-rule" />
-        <div className="prose">
-          {MESSAGE_INTRO.map((p, i) => (
-            <p className="bp bp-lt" key={i}>{p}</p>
-          ))}
+        <div className="sec-head-center">
+          <span className="eyebrow red">La Réforme Naby Allah</span>
+          <h2 className="sec-title">Un Message de <em>Vérité</em></h2>
         </div>
 
-        <div className="pillars">
-          {PILLARS.map((p) => (
-            <article className="pillar" key={p.name}>
-              <span className="pillar-ar">{p.ar}</span>
-              <h3 className="pillar-name">{p.name}</h3>
-              <div className="pillar-sub">{p.subtitle}</div>
-              <p className="pillar-note">{p.note}</p>
-              {p.body.map((b, i) => (
-                <p className="pillar-body" key={i}>{b}</p>
-              ))}
-            </article>
+        <div className="message2">
+          {PILLARS.map(([ar, color, name, trans, body, mid]) => (
+            <div className={`msg2-col ${mid ? 'mid' : ''}`} key={name}>
+              <p className={`msg2-ar ${color}`}>{ar}</p>
+              <h3 className="msg2-name">{name}</h3>
+              <p className="msg2-trans">{trans}</p>
+              <p className="msg2-body">{body}</p>
+            </div>
           ))}
         </div>
-
-        <p className="message-end">Ce n’est pas un idéal qu’il a transmis. C’est un chemin.</p>
       </div>
     </section>
   )

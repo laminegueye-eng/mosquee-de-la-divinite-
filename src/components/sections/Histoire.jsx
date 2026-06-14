@@ -1,51 +1,45 @@
-import { images, HISTOIRE_INTRO, SANGABI_BIO } from '../../data/content'
+import { images } from '../../data/content'
 
+// HISTOIRE — « Née d'un rêve divin » (mise en page de référence : texte / citation + grille d'images)
 export default function Histoire() {
   return (
-    <section id="histoire" className="section bg-white">
+    <section id="histoire" className="section bg-cream">
       <div className="sw">
-        <div className="ey ey-gold">Histoire</div>
-        <h2 className="h2 h2-dk">Née d’un <em>rêve divin</em></h2>
-        <span className="subhead-rule" />
-
-        <div className="prose">
-          {HISTOIRE_INTRO.map((p, i) => (
-            <p className="bp bp-dk" key={i}>{p}</p>
-          ))}
-        </div>
-
-        {/* Sangabi */}
-        <div id="sangabi" className="founder-row">
-          <div className="founder-photo-wrap">
-            <img src={images.khalife} alt="Mouhamed Gorgui Seyni Gueye, dit Sangabi" className="ph" loading="lazy" />
+        <div className="hist2-grid">
+          {/* Colonne gauche : récit */}
+          <div className="hist2-left">
+            <span className="eyebrow red">Origines</span>
+            <h2 className="sec-title title-margin">Née d’un rêve <br /><em>divin</em></h2>
+            <div className="hist2-body">
+              <p>Une mosquée sur la Corniche de Ouakam. Deux minarets de 45 mètres face à l’océan. Une coupole de 80 tonnes suspendue dans l’air marin.</p>
+              <p>Elle existe parce qu’un homme a reçu un message, un ordre, une vision, et a choisi de ne pas le garder pour lui.</p>
+              <p>Cet homme s’appelle <strong>Mouhamed Gorgui Seyni Gueye</strong>, dit Sangabi.</p>
+              <p>Depuis sa révélation de 1973, Sangabi a dessiné la mosquée telle qu’il l’avait vue. Cheikh Ngom, architecte de renom, a traduit fidèlement ses esquisses en plans.</p>
+              <p>Mais la construction elle-même, chaque pierre posée, chaque minaret érigé, chaque sac de ciment porté, c’est la communauté qui l’a faite. De ses mains. Quartier par quartier. Famille par famille.</p>
+              <p>Cette même communauté l’a aussi financée. Chacun selon ses moyens. Étape par étape.</p>
+            </div>
           </div>
-          <div>
-            <div className="f-dates">19 juillet 1926 · 12 mars 2007</div>
-            <h3 className="f-name">Mouhamed Gorgui Seyni Gueye</h3>
-            <p className="f-aka">dit Sangabi · Khalifatou Lahi Fil Ardi</p>
-            {SANGABI_BIO.map((p, i) => (
-              <p className="f-bio" key={i}>{p}</p>
-            ))}
-            <blockquote className="f-quote">
-              «&nbsp;Dieu, qui m’a demandé de construire, nous donnera les moyens nécessaires pour
-              réaliser cette Mosquée inchallah.&nbsp;»
-            </blockquote>
-          </div>
-        </div>
 
-        {/* Nuit fondatrice */}
-        <div className="night-card night-card-wide">
-          <div className="nc-label">Nuit du 28 au 29 juin 1973</div>
-          <h3 className="nc-title">La nuit fondatrice</h3>
-          <div className="nc-arabic">اللَّهُ أَكْبَر</div>
-          <p className="nc-text">
-            Une voix. Une maquette lumineuse parachutée du ciel. L’ordre de la suivre jusqu’à la
-            baie de Ouakam. Sur la porte de droite, ALLAHOU AKBAR en lettres d’or.
-          </p>
-          <p className="nc-text">
-            Sangabi dessine ce qu’il a vu dans un cahier. Certaines choses se tiennent longtemps
-            dans le silence avant d’être réelles.
-          </p>
+          {/* Colonne droite : citation + grille d'images (emplacements) */}
+          <div className="hist2-right">
+            <div className="hist2-quote">
+              <p>«&nbsp;La vision venait d’en haut. Les esquisses venaient de Sangabi. L’édifice venait de la communauté.&nbsp;»</p>
+              <span className="bar" />
+            </div>
+            <div className="hist2-imgs">
+              <div className="col5">
+                <img src={images.khalifeJeune} alt="Le Khalife jeune" className="hist2-img" loading="lazy" />
+              </div>
+              <div className="col7">
+                <div>
+                  <img src={images.khalifeReco} alt="Le Khalife en reconnaissance sur le site" className="hist2-img" loading="lazy" />
+                </div>
+                <div>
+                  <img src={images.avantMosquee} alt="Le site avant la construction de la mosquée" className="hist2-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
