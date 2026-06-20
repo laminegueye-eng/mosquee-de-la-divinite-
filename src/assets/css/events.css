@@ -1,0 +1,30 @@
+/* EVENEMENTS */
+.events-main{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(4,89,38,0.12);margin-bottom:48px}
+.ev-card{background:var(--white);display:flex;flex-direction:column;transition:background 0.25s}
+.ev-card:hover{background:var(--cream)}
+.ev-photo{width:100%;aspect-ratio:16/9}
+.ev-body{padding:40px 40px;flex:1;display:flex;flex-direction:column}
+.ev-label{font-family:var(--caps);font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.ev-label::before{content:'';display:inline-block;width:16px;height:1px;background:var(--red)}
+.ev-name{font-family:var(--serif);font-size:32px;color:var(--ink);margin-bottom:16px;line-height:1.15;font-weight:400;min-height:80px}
+.ev-name em{font-style:italic;color:var(--green)}
+.ev-desc{font-size:16px;line-height:1.8;color:var(--stone)}
+/* mini events */
+.mini-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.mini-col-head{padding:13px 0 16px}
+.mini-col-head.gold{border-top:3px solid var(--gold)}
+.mini-col-head.red{border-top:3px solid var(--red)}
+.mini-col-lbl{font-family:var(--caps);font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase}
+.mini-col-lbl.gold{color:var(--gold)}
+.mini-col-lbl.red{color:var(--red)}
+.mini-stack{display:flex;flex-direction:column;gap:2px}
+.mini-ev{display:flex;flex-direction:column}
+.mini-ev-photo{width:100%;aspect-ratio:16/9}
+.mini-ev-body{padding:22px 24px;min-height:120px}
+.mini-ev-body.gold-border{border-left:3px solid var(--gold);background:var(--parchment)}
+.mini-ev-body.red-border{border-left:3px solid var(--red);background:var(--cream)}
+.mini-ev-type{font-family:var(--caps);font-size:7.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(0,0,0,0.72);margin-bottom:7px}
+.mini-ev-name{font-family:var(--caps);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:7px;line-height:1.35}
+.mini-ev-name.gold{color:var(--green-dk)}
+.mini-ev-name.red{color:var(--green)}
+.mini-ev-desc{font-size:14px;line-height:1.65;color:var(--stone);font-style:italic}

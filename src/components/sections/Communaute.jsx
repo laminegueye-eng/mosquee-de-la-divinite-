@@ -14,7 +14,7 @@ export default function Communaute() {
       <div className="sw">
         <div className="comm2-head">
           <div>
-            <h2 className="sec-title">Actions &amp; <em className="emerald-em">Patrimoine</em></h2>
+            <h2 className="sec-title">Actions communautaires</h2>
           </div>
           <p>Au-delà du béton, une vie sociale intense anime la baie.</p>
         </div>
