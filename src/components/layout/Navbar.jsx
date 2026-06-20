@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
+import { FiMenu, FiX } from 'react-icons/fi'
 import logo from '../../assets/photo/Logo.png'
 import { useLanguage } from '../../context/LanguageContext'
 import { cx } from '../../utils/helpers'
@@ -27,43 +29,61 @@ const SUBPAGES = ['/boutique', '/renovation', '/patrimoine']
 export default function Navbar() {
   const { lang, setLang } = useLanguage()
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [lastPath, setLastPath] = useState(location.pathname)
 
   const isSubPage = SUBPAGES.includes(location.pathname)
   const links = isSubPage ? SUBPAGE_LINKS : GLOBAL_LINKS
+  const donHref = isSubPage ? '/#renovation' : '#renovation'
+  const closeMenu = () => setMenuOpen(false)
+
+  // Ferme le menu mobile quand on change de page (navigation, retour navigateur…)
+  if (location.pathname !== lastPath) {
+    setLastPath(location.pathname)
+    setMenuOpen(false)
+  }
+
+  const Logo = isSubPage ? (
+    <Link to="/" className="nav-logo" onClick={closeMenu}>
+      <img src={logo} alt="Mosquée de la Divinité" className="nav-logo-img" />
+      <span className="nav-logo-txt">
+        <span className="nav-logo-main">Mosquée de la Divinité</span>
+        <span className="nav-logo-sub">Masdjidou Rabbani</span>
+      </span>
+    </Link>
+  ) : (
+    <a href="#hero" className="nav-logo" onClick={closeMenu}>
+      <img src={logo} alt="Mosquée de la Divinité" className="nav-logo-img" />
+      <span className="nav-logo-txt">
+        <span className="nav-logo-main">Mosquée de la Divinité</span>
+        <span className="nav-logo-sub">Masdjidou Rabbani</span>
+      </span>
+    </a>
+  )
 
   return (
     <nav>
-      {isSubPage ? (
-        <Link to="/" className="nav-logo">
-          <img src={logo} alt="Mosquée de la Divinité" className="nav-logo-img" />
-          <span className="nav-logo-txt">
-            <span className="nav-logo-main">Mosquée de la Divinité</span>
-            <span className="nav-logo-sub">Masdjidou Rabbani</span>
-          </span>
-        </Link>
-      ) : (
-        <a href="#hero" className="nav-logo">
-          <img src={logo} alt="Mosquée de la Divinité" className="nav-logo-img" />
-          <span className="nav-logo-txt">
-            <span className="nav-logo-main">Mosquée de la Divinité</span>
-            <span className="nav-logo-sub">Masdjidou Rabbani</span>
-          </span>
-        </a>
-      )}
+      {Logo}
 
-      <ul className="nav-links-ref">
+      <ul className={cx('nav-links-ref', menuOpen && 'open')}>
         {links.map(([label, href]) => {
           const isAnchor = href.startsWith('/#') || href.startsWith('#')
           return (
             <li key={href}>
               {isAnchor ? (
-                <a href={href}>{label}</a>
+                <a href={href} onClick={closeMenu}>{label}</a>
               ) : (
-                <Link to={href}>{label}</Link>
+                <Link to={href} onClick={closeMenu}>{label}</Link>
               )}
             </li>
           )
         })}
+        {/* Bouton « don » repris dans le menu déroulant mobile */}
+        <li className="nav-don-mobile">
+          <a href={donHref} className="nav-don" onClick={closeMenu}>
+            Faire un don
+          </a>
+        </li>
       </ul>
 
       <div className="nav-right">
@@ -79,9 +99,18 @@ export default function Navbar() {
             </button>
           ))}
         </div>
-        <a href={isSubPage ? '/#renovation' : '#renovation'} className="nav-don">
+        <a href={donHref} className="nav-don nav-don-desktop">
           Faire un don
         </a>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <FiX /> : <FiMenu />}
+        </button>
       </div>
     </nav>
   )

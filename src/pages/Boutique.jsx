@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import '../assets/css/Boutique.css'
 import puzzleImg from '../assets/photo/puzzle.webp'
 import blocNoteImg from '../assets/photo/Bloc-Note.webp'
 import hoodieImg from '../assets/photo/Hoodie.webp'
 import bagImg from '../assets/photo/Shopping_Bag_Mockup_v01.jpg'
-import logoImg from '../assets/photo/Logo.png'
 
 // Filtres de la galerie boutique (le premier affiche tout)
 const FILTERS = ['Tous les objets', 'Éditions', 'Textile', 'Papeterie']

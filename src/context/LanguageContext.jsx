@@ -13,7 +13,8 @@ export function LanguageProvider({ children }) {
   )
 }
 
-// Hook pratique pour consommer le contexte
+// Hook pratique pour consommer le contexte (colocalisé avec le Provider — pattern courant)
+// eslint-disable-next-line react-refresh/only-export-components
 export function useLanguage() {
   const ctx = useContext(LanguageContext)
   if (!ctx) {
