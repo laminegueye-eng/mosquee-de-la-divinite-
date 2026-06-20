@@ -2,7 +2,7 @@ import { FiCoffee, FiBookOpen, FiHeart, FiTrash2 } from 'react-icons/fi'
 
 // COMMUNAUTÉ — « Actions & Patrimoine » : 4 actions (réf)
 const ACTIONS = [
-  [FiCoffee, 'Ndogou', 'Repas de rupture offerts à des milliers de jeûneurs chaque soir de Ramadan.'],
+  [FiCoffee, 'Ndogou', 'Du lundi au vendredi pendant le Ramadan. La rupture du jeûne offerte sur place.'],
   [FiBookOpen, 'CEEMNA', 'Soutien scolaire et bourses pour les enfants issus des familles les plus modestes.'],
   [FiHeart, 'Santé', 'Journées médicales et campagnes de don de sang régulières pour les hôpitaux.'],
   [FiTrash2, 'UFMNA', 'L’union des femmes veille à la propreté méticuleuse du sanctuaire et de la plage.'],
