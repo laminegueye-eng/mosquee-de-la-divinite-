@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import './App.css'
+import './assets/css/App.css'
 import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'

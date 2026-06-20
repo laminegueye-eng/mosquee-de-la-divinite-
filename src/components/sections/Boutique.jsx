@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { images } from '../../data/content'
 
 // BOUTIQUE — « Boutique Patrimoine » : 4 produits avec visuels
@@ -30,7 +31,7 @@ export default function Boutique() {
         </div>
 
         <div className="shop2-cta-wrap">
-          <a href="#boutique" className="btn-teal">Voir tout</a>
+          <Link to="/boutique" className="btn-teal">Voir tout</Link>
         </div>
       </div>
     </section>

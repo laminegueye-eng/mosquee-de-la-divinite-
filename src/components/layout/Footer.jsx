@@ -1,4 +1,4 @@
-import logo from '../../assets/Logo.png'
+import logo from '../../assets/photo/Logo.png'
 import { FaYoutube, FaFacebookF, FaInstagram, FaXTwitter, FaTiktok, FaSnapchat } from 'react-icons/fa6'
 import { FOOTER_NAV } from '../../data/content'
 

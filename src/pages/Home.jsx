@@ -1,6 +1,7 @@
 import Hero from '../components/sections/Hero'
 import Histoire from '../components/sections/Histoire'
 import Sangabi from '../components/sections/Sangabi'
+import Construction from '../components/sections/Construction'
 import Visiter from '../components/sections/Visiter'
 import Exposition from '../components/sections/Exposition'
 import Timeline from '../components/sections/Timeline'
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Histoire />
       <Sangabi />
+      <Construction />
       <Visiter />
       <Exposition />
       <Timeline />
